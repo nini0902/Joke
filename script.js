@@ -32,7 +32,17 @@ const jokes = [
     "班上第一名說這次考試很難，看來我是去當志願者了。",
     "老師：記得要每天複習。\n我：我連今天學什麼都記不得了。",
     "明天就要段考了，我的程度是在用觀念理解題目，但同學已經在用觀念理解人生了。",
-    "老師：這題很簡單，誰要來回答？\n全班：...\n老師：好，那我隨機點名。\n我：（開始祈禱）"
+    "老師：這題很簡單，誰要來回答？\n全班：...\n老師：好，那我隨機點名。\n我：（開始祈禱）",
+    "我以為我是來讀書的，沒想到是來練習忍耐的。",
+    "數學不是我的弱項，是我的剋星。",
+    "熬夜複習不是習慣，是生存必需。",
+    "聽說考試範圍很大，大到跟我的絕望一樣大。",
+    "班導：你們要加油喔！\n我：老師，我已經在用電力了。",
+    "看到考卷時我很淡定，因為我知道我什麼都不會。",
+    "讀書計畫永遠趕不上變化的考試範圍。",
+    "放棄治療不是最後一步，最後一步是憑直覺猜答案。",
+    "我不是學霸，我是學渣中的清流。",
+    "每天都在想：乾脆去賣雞排好了。"
 ];
 
 // 取得今日笑話
@@ -54,6 +64,33 @@ document.getElementById('joke').textContent = getTodayJoke();
 
 // 點擊按鈕更換笑話
 document.getElementById('newJoke').addEventListener('click', displayJoke);
+
+// 日記標語
+const diarySlogans = [
+    "你今天崩潰了嗎？",
+    "今天過得還好嗎？需要抱抱嗎？",
+    "又是被考試壓得喘不過氣的一天...",
+    "讓我們記錄今天的掙扎時刻",
+    "寫下你的心情，讓未來的自己笑一笑",
+    "今天的你打算崩潰幾分鐘？",
+    "用文字發洩，總比揍人好",
+    "誰說高中生活不能每天都當療養院？",
+    "來說說今天的笑容是裝出來的嗎？",
+    "今天的你也是個勇敢的戰士！"
+];
+
+// 更新日記標語
+function updateDiarySlogan() {
+    const sloganElement = document.getElementById('diarySlogan');
+    const randomIndex = Math.floor(Math.random() * diarySlogans.length);
+    sloganElement.textContent = diarySlogans[randomIndex];
+}
+
+// 每次打開日記區域時更新標語
+document.getElementById('diaryText').addEventListener('focus', updateDiarySlogan);
+
+// 初始化日記標語
+updateDiarySlogan();
 
 // 日記功能
 class DiaryManager {
